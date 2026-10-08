@@ -74,6 +74,16 @@ main > section > h2 {
   margin-bottom: 1.5rem;
 }
 
+main > section > h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  border-radius: 2px;
+}
+
 #about p {
   color: var(--text-muted);
   max-width: 750px;
@@ -228,16 +238,6 @@ main > section > h2 {
     padding: 1rem;
   }
 
-main > section > h2::after {
-  content: '';
-  display: block;
-  width: 70px;
-  height: 3px;
-  margin-top: 0.6rem;
-  background: linear-gradient(90deg, var(--gold-light), var(--gold));
-  border-radius: 2px;
-}
-
   .navbar nav a {
     margin: 0 0.6rem;
   }
@@ -374,4 +374,78 @@ body,
 
 .cert-link:hover {
   text-decoration: underline;
+}
+
+/* Contact page */
+
+.contact-intro {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  max-width: 600px;
+}
+
+.form-field {
+  margin-bottom: 1.2rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-field textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+#contact-form button.btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#form-status {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+#form-status.success { color: #3d9a5f; }
+#form-status.error   { color: #d9534f; }
+
+/* Honeypot: invisible to people, visible to bots */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.gallery-more {
+  margin-top: 1.5rem;
 }

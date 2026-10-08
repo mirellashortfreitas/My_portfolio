@@ -7,7 +7,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 function formatDate(date) {
   if (!date) return '';
   const [year, month] = date.split('-');
-  return `${MONTHS[Number(month) - 1]} ${year}`;
+  return month ? `${MONTHS[Number(month) - 1]} ${year}` : year;
 }
 
 function renderCertificates() {
