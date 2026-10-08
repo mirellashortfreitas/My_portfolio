@@ -111,3 +111,17 @@ async function loadExtras() {
 }
 
 loadExtras();
+
+const photoDialog = document.getElementById('photo-dialog');
+
+document.getElementById('photo-open').addEventListener('click', () => {
+  photoDialog.showModal();
+});
+
+document.getElementById('photo-close').addEventListener('click', () => {
+  photoDialog.close();
+});
+
+photoDialog.addEventListener('click', (e) => {
+  if (e.target === photoDialog) photoDialog.close();
+});

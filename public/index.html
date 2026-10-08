@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="navbar">
     <a href="#home" class="logo">Mirella</a>
     <nav>
@@ -25,14 +26,17 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
 
     <section id="home" class="hero">
+    <button type="button" class="hero-photo-btn" id="photo-open" aria-label="Enlarge photo">
       <img src="img/mirella_photo.png" alt="Photo of Mirella Short Freitas" class="hero-photo">
-      <div class="hero-text">
+    </button>
+
+    <div class="hero-text">
         <p class="hello">Hello, I'm</p>
         <h1>Mirella Short Freitas</h1>
-        <h2>QA Engineer and Photographer</h2>
+        <p class="hero-subtitle">QA Engineer and Photographer</p>
         <p>Delivering high-quality software across web platforms in Agile environments, with a focus on healthcare technology.</p>
         <a href="#contact" class="btn">Get in touch</a>
       </div>
@@ -42,11 +46,11 @@
       <h2>About me</h2>
           <p>QA Engineer with 2+ years of hands-on experience in software quality assurance, delivering reliable and high-quality web applications and API-based solutions within Agile/Scrum environments. Experienced in manual testing, exploratory testing, functional testing, regression testing, test case design, test planning, defect identification, and end-to-end software testing throughout the SDLC.</p>
 
-          <br><p>Proven ability to collaborate closely with developers, designers, and cross-functional teams to investigate defects, improve acceptance criteria, enhance UX/UI quality, and support stable, high-quality releases. Experienced in building and improving QA processes, identifying issues early, and contributing to efficient testing and release cycles.</p>
+          <p>Proven ability to collaborate closely with developers, designers, and cross-functional teams to investigate defects, improve acceptance criteria, enhance UX/UI quality, and support stable, high-quality releases. Experienced in building and improving QA processes, identifying issues early, and contributing to efficient testing and release cycles.</p>
 
-          <br><p>Strong technical foundation in SQL for testing, REST APIs, HTML, CSS, JavaScript, PHP/.NET, GitHub, and programming fundamentals, complemented by knowledge of GDPR, cybersecurity, cloud technologies, and software testing methodologies. Experienced in healthcare technology, supporting security and intrusion testing readiness and contributing to successful government certification and regulatory compliance.</p>
+          <p>Strong technical foundation in SQL for testing, REST APIs, HTML, CSS, JavaScript, PHP/.NET, GitHub, and programming fundamentals, complemented by knowledge of GDPR, cybersecurity, cloud technologies, and software testing methodologies. Experienced in healthcare technology, supporting security and intrusion testing readiness and contributing to successful government certification and regulatory compliance.</p>
 
-          <br><p>Detail-oriented, analytical, proactive, and quality-focused professional with strong problem-solving and communication skills, committed to continuous improvement, product reliability, and delivering exceptional software quality in fast-paced Agile environments.
+          <p>Detail-oriented, analytical, proactive, and quality-focused professional with strong problem-solving and communication skills, committed to continuous improvement, product reliability, and delivering exceptional software quality in fast-paced Agile environments.
         </p>
     </section>
 
@@ -165,6 +169,11 @@
     </section>
 
   </main>
+
+  <dialog id="photo-dialog" class="photo-dialog" aria-label="Photo of Mirella Short Freitas">
+      <button type="button" id="photo-close" class="photo-close" aria-label="Close photo">✕</button>
+      <img src="img/mirella_photo.png" alt="Photo of Mirella Short Freitas" class="photo-large">
+  </dialog>
 
   <script src="js/theme.js"></script>
   <script src="js/script.js"></script>
