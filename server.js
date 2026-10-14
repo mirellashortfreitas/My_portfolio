@@ -6,6 +6,7 @@ const certificates = require('./data/certificates.json');
 const extraCourses = require('./data/extracourse.json');
 
 const app = express();
+app.set('trust proxy', 1);
 app.use(helmet());
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
