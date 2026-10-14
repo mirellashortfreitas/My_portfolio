@@ -524,3 +524,9 @@ textarea:focus-visible {
   font-size: 1.1rem;
   cursor: pointer;
 }
+
+.privacy-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
