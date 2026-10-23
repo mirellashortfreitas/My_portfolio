@@ -530,3 +530,133 @@ textarea:focus-visible {
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
+
+/* ---------- Photography gallery ---------- */
+.photo-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.photo-page h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.photo-page .section-intro {
+  text-align: center;
+  opacity: .7;
+  margin-bottom: 3rem;
+}
+
+/* Masonry: columns that fit both portrait and landscape photos */
+.gallery-grid {
+  columns: 3 300px;
+  column-gap: 1.25rem;
+}
+
+.gallery-item {
+  position: relative;
+  margin: 0 0 1.25rem;
+  overflow: hidden;
+  border-radius: 12px;
+  break-inside: avoid;
+  cursor: zoom-in;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .8s ease, filter .8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(.85);
+}
+
+/* Caption that slides up on hover */
+.gallery-item figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.5rem 1.25rem 1rem;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  letter-spacing: .03em;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.gallery-item:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Touch devices have no hover: keep captions always visible */
+@media (hover: none) {
+  .gallery-item figcaption { opacity: 1; transform: none; }
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, .92);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+  transform: scale(.96);
+  transition: transform .35s ease;
+}
+
+.lightbox.open img { transform: scale(1); }
+
+.lb-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Watermark overlay on gallery thumbnails */
+.gallery-item::after {
+  content: "© Mirella Short";
+  position: absolute;
+  right: .75rem;
+  top: .6rem;
+  color: rgba(255, 255, 255, .7);
+  font-size: .75rem;
+  letter-spacing: .05em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+  pointer-events: none;
+}
