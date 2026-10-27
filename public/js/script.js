@@ -125,3 +125,4 @@ document.getElementById('photo-close').addEventListener('click', () => {
 photoDialog.addEventListener('click', (e) => {
   if (e.target === photoDialog) photoDialog.close();
 });
+
